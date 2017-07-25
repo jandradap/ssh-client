@@ -9,5 +9,6 @@ SSH client with ansi2html to get the output of the commands in html. (debian-sli
 ## Example for get html report
 
 ```shell
+docker run -i jorgeandrada/ssh-client bash -c "ls -lh | ansi2html" > output.html
 docker exec -i example sh -c 'command_to_execute | ansi2html' > output.html
 ```

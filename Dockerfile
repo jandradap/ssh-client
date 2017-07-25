@@ -13,7 +13,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0" \
       maintainer="Jorge Andrada Prieto <jandradap@gmail.com>" \
-      org.label-schema.docker.cmd=""
+      org.label-schema.docker.cmd="docker run -i jorgeandrada/ssh-client bash -c "ls -lh | ansi2html" > output.html"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-client \

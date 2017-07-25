@@ -18,8 +18,11 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-client \
     python-pip \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN pip install wheel \
+  && pip install setuptools \
   && pip install ansi2html \
-  && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /root/.ssh \
   && chmod 0700 /root/.ssh \
   && echo "Host *\n\tStrictHostKeyChecking no\n\n" > /root/.ssh/config
